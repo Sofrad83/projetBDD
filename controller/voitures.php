@@ -1,0 +1,3 @@
+<?php
+$neuves = pg_fetch_all(pg_query($conn, 'select * from public."Neuve" inner join public."Modele" on public."Neuve".id_mod = public."Modele".id_mod inner join public."Marque" on public."Modele".id_marq = public."Marque".id_marq inner join public."Voiture_Type" on public."Neuve".id_voit_type = public."Voiture_Type".id_voit_type left join public."Vendeur" on public."Neuve".id_vend = public."Vendeur".id_vend left join public."Client" on public."Neuve".id_cli = public."Client".id_cli left join public."Commande" on public."Neuve".id_cmd = public."Client".id_cli order by id_voit asc'));
+?>
